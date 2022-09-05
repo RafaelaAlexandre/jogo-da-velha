@@ -9,5 +9,7 @@ inicio
 int main(){
 	char matriz[LINHA][COLUNA];
 	
+	
+	
 	return 0;
 }
