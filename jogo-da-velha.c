@@ -7,25 +7,30 @@ inicio
 #define COLUNA 3
 void exibirMatriz(char matriz[LINHA][COLUNA]);
 void criarEspaco(char matriz[LINHA][COLUNA]);
+char receberDado(char caracter);
 
 int main(){
 	char matriz[LINHA][COLUNA];
+	char jogador1,jogador2;	
 	
+	//preenchendo matriz com espaço em branco
 	criarEspaco(matriz);
+	
+	//definido figura de cada jogador
+	printf("jorgador 1:\n");
+	printf("Escolha uma opcao: X ou O\n ");
+	scanf("%c", &jogador1);
+	jogador1=toupper(jogador1);	
+	jogador2=receberDado(jogador1);	
+	printf("jogador 1: %c\n", jogador1);
+	printf("jogador 2: %c\n", jogador2);
+	
+	//exibindo a matriz vazia
 	exibirMatriz(matriz);
 
 	
 	return 0;
 }
-//void exibirMatriz(char matriz[LINHA][COLUNA]){
-//	int i,j;
-//	for(i=0;i<LINHA;i++){
-//		for(j=0;j<COLUNA;j++){
-//			printf("%c\t|",matriz[i][j]);
-//		}
-//		printf("\n");
-//	}
-//}
 void criarEspaco(char matriz[LINHA][COLUNA]){
 	int i,j;
 	for(i=0;i<LINHA;i++){
@@ -50,5 +55,11 @@ void exibirMatriz(char matriz[][COLUNA]){
 		}	
 	}
 	printf("\n\n");
+}
+char receberDado(char caracter){
+	if(caracter=='X'){
+		return 'O';
+	}
+	return 'X';
 }
 
