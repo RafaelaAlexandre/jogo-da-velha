@@ -1,5 +1,5 @@
 /*
-entrada de dados
+validando posição
 */
 #include<stdio.h>
 #include<ctype.h>
@@ -13,6 +13,7 @@ entrada de dados
 void exibirMatriz(char matriz[LINHA][COLUNA]);
 void preencherMatriz(char matriz [][COLUNA]);
 char receberDado(char caracter);
+void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jogador2);
 
 int main(){
 	int linha, coluna;
@@ -78,6 +79,33 @@ char receberDado(char caracter){
 			printf("INVALIDO!\nTENTE DE NOVO\n\n");
 			return ' ';
 		}
+	}	
+}
+void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jogador2){
+	int linha, coluna, retorno;
+	char caracter;
+	if(*cont==2){
+		do{
+			printf("[Jogador 1]Escolha a linha:   ");
+			scanf("%d",&linha);
+			printf("[Jogador 1]Escolha a coluna:  ");
+			scanf("%d",&coluna);
+//				caracter=;
+//			retorno=validacaoPosicao(matriz[linha][coluna]);
+		}while(retorno==FALSE);						
+		matriz[linha][coluna]=jogador1;	
+		(*cont)--;					
+	}else{
+		do{
+			printf("[Jogador 2]Escolha a linha: ");
+			scanf("%d",&linha);
+			printf("[Jogador 2]Escolha a coluna: ");
+			scanf("%d",&coluna);
+//				caracter=;
+//			retorno=validacaoPosicao(matriz[linha][coluna]);
+		}while(retorno==FALSE);			
+		matriz[linha][coluna]=jogador2;
+		(*cont)++;
 	}	
 }
 
