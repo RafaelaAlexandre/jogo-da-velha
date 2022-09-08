@@ -17,13 +17,19 @@ int main(){
 	preencherMatriz(matriz);
 	
 	//definido figura de cada jogador
-	printf("jorgador 1:\n");
-	printf("Escolha uma opcao: X ou O\n ");
-	scanf("%c", &jogador1);
-	jogador1=toupper(jogador1);	
-	jogador2=receberDado(jogador1);	
-	printf("jogador 1: %c\n", jogador1);
-	printf("jogador 2: %c\n", jogador2);
+	do{
+		printf("Escolha uma opcao: X ou O\n");
+		printf("Jogador 1: ");		
+		fflush(stdin);
+		scanf("%c", &jogador1);
+		jogador1=toupper(jogador1);
+		
+		jogador2=receberDado(jogador1);
+				
+	}while(jogador2==' ');
+		
+	printf("\njogador 1: %c\n", jogador1);
+	printf("jogador 2: %c\n\n", jogador2);
 	
 	//exibindo a matriz vazia
 	exibirMatriz(matriz);
@@ -59,7 +65,13 @@ void exibirMatriz(char matriz[][COLUNA]){
 char receberDado(char caracter){
 	if(caracter=='X'){
 		return 'O';
-	}
-	return 'X';
+	}else{
+		if(caracter=='O'){
+			return 'X';
+		}else{
+			printf("INVALIDO!\nTENTE DE NOVO\n\n");
+			return ' ';
+		}
+	}	
 }
 
