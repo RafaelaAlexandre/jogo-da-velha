@@ -16,6 +16,8 @@ char receberDado(char caracter);
 void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jogador2);
 int validacaoPosicao(char caracter);
 int validacaoVitoria(char matriz[][COLUNA], char caracter);
+int verificarLinha(char matriz[][COLUNA], char caracter);
+
 
 int main(){
 	int linha, coluna;
@@ -121,9 +123,9 @@ int validacaoPosicao(char caracter){
 int validacaoVitoria(char matriz[][COLUNA], char caracter){
 	int i,  j;
 	
-//	if(verificarLinha(matriz, caracter)==TRUE){
-//		return TRUE;	
-//	}
+	if(verificarLinha(matriz, caracter)==TRUE){
+		return TRUE;	
+	}
 //	if(verificarColuna(matriz, caracter)==TRUE){
 //		return TRUE;	
 //	}
@@ -134,5 +136,21 @@ int validacaoVitoria(char matriz[][COLUNA], char caracter){
 //		return TRUE;	
 //	}
 	return FALSE;	
+}
+int verificarLinha(char matriz[][COLUNA], char caracter){
+	int i, j, cont=0;
+	for(i=0;i<LINHA;i++){
+		cont=0;
+		for(j=0;j<COLUNA;j++){
+			if(matriz[i][j]==caracter){
+				cont++;
+//				printf("%d", cont);
+			}
+		}
+		if(cont==3){
+			return TRUE;
+		}
+	}
+	return FALSE;
 }
 
