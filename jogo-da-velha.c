@@ -6,7 +6,7 @@ inicio
 #define LINHA 3
 #define COLUNA 3
 void exibirMatriz(char matriz[LINHA][COLUNA]);
-void criarEspaco(char matriz[LINHA][COLUNA]);
+void preencherMatriz(char matriz [][COLUNA]);
 char receberDado(char caracter);
 
 int main(){
@@ -14,7 +14,7 @@ int main(){
 	char jogador1,jogador2;	
 	
 	//preenchendo matriz com espaço em branco
-	criarEspaco(matriz);
+	preencherMatriz(matriz);
 	
 	//definido figura de cada jogador
 	printf("jorgador 1:\n");
@@ -31,11 +31,11 @@ int main(){
 	
 	return 0;
 }
-void criarEspaco(char matriz[LINHA][COLUNA]){
-	int i,j;
+void preencherMatriz(char matriz [][COLUNA]){
+	int i, j;
 	for(i=0;i<LINHA;i++){
 		for(j=0;j<COLUNA;j++){
-			matriz[i][j]=' ';	
+			matriz[i][j]=' ';
 		}
 	}
 }
