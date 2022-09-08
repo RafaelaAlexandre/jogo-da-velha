@@ -20,6 +20,7 @@ int verificarLinha(char matriz[][COLUNA], char caracter);
 int verificarColuna(char matriz[][COLUNA], char caracter);
 int verificarDiagonalPrincipal(char matriz[][COLUNA], char caracter);
 int verificarDiagonalSecundaria(char matriz[][COLUNA], char caracter);
+void exibirGanhador(char caracter, int rodada, char jogador1, char jogador2);
 
 int main(){
 	int linha, coluna;
@@ -193,4 +194,25 @@ int verificarDiagonalSecundaria(char matriz[][COLUNA], char caracter){
 		}
 	}
 	return FALSE;
+}
+void exibirGanhador(char caracter, int rodada, char jogador1, char jogador2){
+	
+	if(rodada==9){
+		printf("**********DEU VELHA***********\n\n");
+		printf("RESULTADO: EMPATE\n\n");
+	}else{
+		if(caracter==jogador1){
+		printf("**********VITORIA***********\n\n");
+		printf("RESULTADO: JOGADOR 1 VENCEU\n\n"); 
+		}else{
+			if(caracter==jogador2){
+				printf("**********VITORIA***********\n\n");
+				printf("RESULTADO: JOGADOR 2 VENCEU\n\n");
+			}else{
+				printf("**********DEU VELHA***********\n\n");
+				printf("RESULTADO: EMPATE\n\n");
+			}
+			 
+		}
+	}
 }
