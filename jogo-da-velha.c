@@ -17,6 +17,7 @@ void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jog
 int validacaoPosicao(char caracter);
 int validacaoVitoria(char matriz[][COLUNA], char caracter);
 int verificarLinha(char matriz[][COLUNA], char caracter);
+int verificarColuna(char matriz[][COLUNA], char caracter);
 
 
 int main(){
@@ -126,9 +127,9 @@ int validacaoVitoria(char matriz[][COLUNA], char caracter){
 	if(verificarLinha(matriz, caracter)==TRUE){
 		return TRUE;	
 	}
-//	if(verificarColuna(matriz, caracter)==TRUE){
-//		return TRUE;	
-//	}
+	if(verificarColuna(matriz, caracter)==TRUE){
+		return TRUE;	
+	}
 //	if(verificarDiagonalPrincipal(matriz, caracter)==TRUE){
 //		return TRUE;	
 //	}
@@ -145,6 +146,21 @@ int verificarLinha(char matriz[][COLUNA], char caracter){
 			if(matriz[i][j]==caracter){
 				cont++;
 //				printf("%d", cont);
+			}
+		}
+		if(cont==3){
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
+int verificarColuna(char matriz[][COLUNA], char caracter){
+	int i, j, cont;
+	for(i=0;i<LINHA;i++){
+		cont=0;
+		for(j=0;j<COLUNA;j++){
+			if(matriz[j][i]==caracter){
+				cont++;
 			}
 		}
 		if(cont==3){
