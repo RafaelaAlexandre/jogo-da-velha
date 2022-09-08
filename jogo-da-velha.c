@@ -82,13 +82,11 @@ int main(){
 			}
 		}		
 		i++;
-//		printf("\n\ni: %d\n", i);
 		exibirMatriz(matriz);
 		system("pause");
 		system("cls");
 	}while((validacao!=jogador1)&&(validacao!=jogador2)&&(i<(LINHA*COLUNA)));
-	
-	printf("validacao: %c\n", validacao);		
+			
 	exibirMatriz(matriz);
 	exibirGanhador(validacao, parada, jogador1, jogador2);
 
@@ -141,18 +139,16 @@ void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jog
 			scanf("%d",&linha);
 			printf("[Jogador 1]Escolha a coluna:  ");
 			scanf("%d",&coluna);
-//				caracter=;
 			retorno=validacaoPosicao(matriz[linha][coluna]);
 		}while(retorno==FALSE);						
 		matriz[linha][coluna]=jogador1;	
 		(*cont)--;					
 	}else{
 		do{
-			printf("[Jogador 2]Escolha a linha: ");
+			printf("[Jogador 2]Escolha a linha:   ");
 			scanf("%d",&linha);
-			printf("[Jogador 2]Escolha a coluna: ");
+			printf("[Jogador 2]Escolha a coluna:  ");
 			scanf("%d",&coluna);
-//				caracter=;
 			retorno=validacaoPosicao(matriz[linha][coluna]);
 		}while(retorno==FALSE);			
 		matriz[linha][coluna]=jogador2;
@@ -162,7 +158,7 @@ void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jog
 int validacaoPosicao(char caracter){
 	
 	if(caracter!=' '){
-		printf("posicao invalida!!!\nTente de novo\n ");
+		printf("\nPosicao invalida!!!\nTente de novo\n\n ");
 		return FALSE;
 	}
 	return TRUE;
@@ -191,7 +187,6 @@ int verificarLinha(char matriz[][COLUNA], char caracter){
 		for(j=0;j<COLUNA;j++){
 			if(matriz[i][j]==caracter){
 				cont++;
-//				printf("%d", cont);
 			}
 		}
 		if(cont==3){
