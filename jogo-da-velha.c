@@ -1,5 +1,5 @@
 /*
-validando vitória
+ta funcionando!
 */
 #include<stdio.h>
 #include<ctype.h>
@@ -45,8 +45,36 @@ int main(){
 	printf("\njogador 1: %c\n", jogador1);
 	printf("jogador 2: %c\n\n", jogador2);
 	
-	//exibindo a matriz vazia
+	system("pause");
+	system("cls");
+	
+	do{
+		printf("\nJogador 1: %c\t", jogador1);
+		printf("Jogador 2: %c\t\n\n", jogador2);
+		exibirMatriz(matriz);
+		escolhendoPosicao(matriz, &cont, jogador1, jogador2);
+		
+		parada=validacaoVitoria(matriz, jogador1);
+		if(parada==TRUE){
+			validacao=jogador1;
+		}else{
+			parada=validacaoVitoria(matriz, jogador2);
+			if(parada==TRUE){
+				validacao=jogador2;
+			}else{
+				validacao=' ';
+			}
+		}		
+		i++;
+//		printf("\n\ni: %d\n", i);
+		exibirMatriz(matriz);
+		system("pause");
+		system("cls");
+	}while((validacao!=jogador1)&&(validacao!=jogador2)&&(i<(LINHA*COLUNA)));
+	
+	printf("validacao: %c\n", validacao);		
 	exibirMatriz(matriz);
+	exibirGanhador(validacao, parada, jogador1, jogador2);
 
 	
 	return 0;
