@@ -1,10 +1,13 @@
 /*
-inicio
+entrada de dados
 */
 #include<stdio.h>
+#include<ctype.h>
+#include<stdlib.h>
 
 #define LINHA 3
 #define COLUNA 3
+
 void exibirMatriz(char matriz[LINHA][COLUNA]);
 void preencherMatriz(char matriz [][COLUNA]);
 char receberDado(char caracter);
@@ -16,7 +19,7 @@ int main(){
 	//preenchendo matriz com espaço em branco
 	preencherMatriz(matriz);
 	
-	//definido figura de cada jogador
+	//validando entrada de dados
 	do{
 		printf("Escolha uma opcao: X ou O\n");
 		printf("Jogador 1: ");		
