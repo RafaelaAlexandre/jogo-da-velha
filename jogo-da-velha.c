@@ -1,5 +1,5 @@
 /*
-validando posição
+validando vitória
 */
 #include<stdio.h>
 #include<ctype.h>
@@ -15,6 +15,7 @@ void preencherMatriz(char matriz [][COLUNA]);
 char receberDado(char caracter);
 void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jogador2);
 int validacaoPosicao(char caracter);
+int validacaoVitoria(char matriz[][COLUNA], char caracter);
 
 int main(){
 	int linha, coluna;
@@ -116,5 +117,22 @@ int validacaoPosicao(char caracter){
 		return FALSE;
 	}
 	return TRUE;
+}
+int validacaoVitoria(char matriz[][COLUNA], char caracter){
+	int i,  j;
+	
+//	if(verificarLinha(matriz, caracter)==TRUE){
+//		return TRUE;	
+//	}
+//	if(verificarColuna(matriz, caracter)==TRUE){
+//		return TRUE;	
+//	}
+//	if(verificarDiagonalPrincipal(matriz, caracter)==TRUE){
+//		return TRUE;	
+//	}
+//	if(verificarDiagonalSecundaria(matriz, caracter)==TRUE){
+//		return TRUE;	
+//	}
+	return FALSE;	
 }
 
