@@ -18,6 +18,7 @@ int validacaoPosicao(char caracter);
 int validacaoVitoria(char matriz[][COLUNA], char caracter);
 int verificarLinha(char matriz[][COLUNA], char caracter);
 int verificarColuna(char matriz[][COLUNA], char caracter);
+int verificarDiagonalPrincipal(char matriz[][COLUNA], char caracter);
 
 
 int main(){
@@ -130,9 +131,9 @@ int validacaoVitoria(char matriz[][COLUNA], char caracter){
 	if(verificarColuna(matriz, caracter)==TRUE){
 		return TRUE;	
 	}
-//	if(verificarDiagonalPrincipal(matriz, caracter)==TRUE){
-//		return TRUE;	
-//	}
+	if(verificarDiagonalPrincipal(matriz, caracter)==TRUE){
+		return TRUE;	
+	}
 //	if(verificarDiagonalSecundaria(matriz, caracter)==TRUE){
 //		return TRUE;	
 //	}
@@ -163,6 +164,18 @@ int verificarColuna(char matriz[][COLUNA], char caracter){
 				cont++;
 			}
 		}
+		if(cont==3){
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
+int verificarDiagonalPrincipal(char matriz[][COLUNA], char caracter){
+	int i, j, cont=0;
+		for(i=0,j=COLUNA-1;j>=0;i++,j--){
+			if(matriz[i][j]==caracter){
+				cont++;
+			}
 		if(cont==3){
 			return TRUE;
 		}
