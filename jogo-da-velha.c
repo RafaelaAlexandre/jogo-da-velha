@@ -5,6 +5,8 @@ entrada de dados
 #include<ctype.h>
 #include<stdlib.h>
 
+#define TRUE 1
+#define FALSE 0
 #define LINHA 3
 #define COLUNA 3
 
