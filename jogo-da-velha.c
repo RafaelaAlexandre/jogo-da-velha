@@ -26,6 +26,22 @@ int main(){
 	int linha, coluna;
 	char jogador1, jogador2, caracter, matriz[LINHA][COLUNA], validacao;
 	int cont=2, i=0, parada;
+
+	//exibindo regras
+	printf("*****************JOGO DA VELHA**************\n\n");
+	printf("Regras:\n\n");
+	printf("Jogador 1 escolher uma FIGURA: X ou O.\n");
+	printf("Jogador 2 fica com a outra figura.\n");
+	printf("ALternadamente, os jogadores escolhem uma posicao ");
+	printf("(escolhendo o numero da linha e da coluna) ");
+	printf("de uma matriz 3x3.\n");
+	printf("GANHA o jogador que formar uma sequencia (horizontal, vertical ou diagonal) ");	
+	printf("primeiro, com suas respecticas figuras.\n");
+	printf("EMPATA o jogo caso termine os espaçoes antes de um dos jogadores ");
+	printf("completarem suas sequencias.\n\n");	
+	printf("VAMOS COMECAR!\n\n");		
+	system("pause"); 
+	system("cls");	
 	
 	//preenchendo matriz com espaço em branco
 	preencherMatriz(matriz);
