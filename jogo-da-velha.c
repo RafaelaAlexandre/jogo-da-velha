@@ -14,6 +14,7 @@ void exibirMatriz(char matriz[LINHA][COLUNA]);
 void preencherMatriz(char matriz [][COLUNA]);
 char receberDado(char caracter);
 void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jogador2);
+int validacaoPosicao(char caracter);
 
 int main(){
 	int linha, coluna;
@@ -91,7 +92,7 @@ void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jog
 			printf("[Jogador 1]Escolha a coluna:  ");
 			scanf("%d",&coluna);
 //				caracter=;
-//			retorno=validacaoPosicao(matriz[linha][coluna]);
+			retorno=validacaoPosicao(matriz[linha][coluna]);
 		}while(retorno==FALSE);						
 		matriz[linha][coluna]=jogador1;	
 		(*cont)--;					
@@ -102,10 +103,18 @@ void escolhendoPosicao(char matriz[][COLUNA], int *cont, char jogador1, char jog
 			printf("[Jogador 2]Escolha a coluna: ");
 			scanf("%d",&coluna);
 //				caracter=;
-//			retorno=validacaoPosicao(matriz[linha][coluna]);
+			retorno=validacaoPosicao(matriz[linha][coluna]);
 		}while(retorno==FALSE);			
 		matriz[linha][coluna]=jogador2;
 		(*cont)++;
 	}	
+}
+int validacaoPosicao(char caracter){
+	
+	if(caracter!=' '){
+		printf("posicao invalida!!!\nTente de novo\n ");
+		return FALSE;
+	}
+	return TRUE;
 }
 
