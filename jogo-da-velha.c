@@ -15,8 +15,9 @@ void preencherMatriz(char matriz [][COLUNA]);
 char receberDado(char caracter);
 
 int main(){
-	char matriz[LINHA][COLUNA];
-	char jogador1,jogador2;	
+	int linha, coluna;
+	char jogador1, jogador2, caracter, matriz[LINHA][COLUNA], validacao;
+	int cont=2, i=0, parada;
 	
 	//preenchendo matriz com espaço em branco
 	preencherMatriz(matriz);
